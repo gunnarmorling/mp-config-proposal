@@ -1,4 +1,4 @@
-= Proposal for a type-safe config API
+# Proposal for a type-safe config API
 
 This contains two modules:
 
