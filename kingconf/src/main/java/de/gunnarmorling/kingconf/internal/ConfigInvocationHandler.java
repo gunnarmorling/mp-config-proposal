@@ -53,6 +53,15 @@ public class ConfigInvocationHandler implements InvocationHandler {
 		if ( returnType == int.class ||  returnType == Integer.class ) {
 			return Integer.valueOf( value );
 		}
+		if ( returnType == long.class ||  returnType == Long.class ) {
+			return Long.valueOf( value );
+		}
+		if ( returnType == float.class ||  returnType == Float.class ) {
+			return Float.valueOf( value );
+		}
+		if ( returnType == double.class ||  returnType == Double.class ) {
+			return Double.valueOf( value );
+		}
 		else if ( returnType == boolean.class ||  returnType == Boolean.class ) {
 			return Boolean.valueOf( value );
 		}
