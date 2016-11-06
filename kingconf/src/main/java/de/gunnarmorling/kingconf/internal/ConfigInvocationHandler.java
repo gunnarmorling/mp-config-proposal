@@ -11,6 +11,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 
 import io.microprofile.config.Key;
 import io.microprofile.config.source.ConfigSource;
@@ -64,6 +66,12 @@ public class ConfigInvocationHandler implements InvocationHandler {
 		}
 		else if ( returnType == boolean.class ||  returnType == Boolean.class ) {
 			return Boolean.valueOf( value );
+		}
+		else if ( returnType == BigInteger.class ) {
+			return new BigInteger( value );
+		}
+		else if ( returnType == BigDecimal.class ) {
+			return new BigDecimal( value );
 		}
 		else {
 			return value;
